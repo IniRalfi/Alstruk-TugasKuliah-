@@ -6,7 +6,7 @@ def tambah_antrian(antrian):
     plat_nomor = random.randint(1000, 4000)
     plat_belakang = (random.choices('ABCDEFGHIJKLMNOPQRSTUVWXYZ', k=2))
     plat = str(f'KB {plat_nomor} {''.join(plat_belakang)}')
-    antrian.appendleft(plat)
+    antrian.append(plat)
     print(f'Mobil dengan plat {plat} berhasil di tambahkan ke antrian.')
     return antrian
 
