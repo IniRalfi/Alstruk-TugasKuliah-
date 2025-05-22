@@ -2,6 +2,7 @@ import questionary
 from fitur.kendaraan import kelola_kendaraan
 from fitur.bbm import transaksi_bbm
 from fitur.riwayat import lihat_riwayat
+from fitur.leaderboard import tampilkan_leaderboard
 
 def menu_user(username) : 
   
@@ -25,7 +26,7 @@ def menu_user(username) :
     elif choice == 'kendaraan':
       kelola_kendaraan(username)
     elif choice == "poin":
-      # cek_poin(username)
+      tampilkan_leaderboard(username)
       pass
     elif choice == 'logout':
       print('Logout berhasil!')

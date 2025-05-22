@@ -1,5 +1,5 @@
 import json, os
-PATH = 'data/akun.json'
+PATH = 'data/akun.json' 
 
 def load_akun():
   if not os.path.exists(PATH) : return{}

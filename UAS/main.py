@@ -2,8 +2,7 @@ import questionary
 from fitur.auth import login, register
 from admin import menu_admin
 from user import menu_user
-
-
+from database.akun import load_akun, simpan_akun
 
 def main():
   while True:

@@ -1,22 +1,12 @@
 {
-    "iniralfi": {
-        "password": "9941ce7d14981b83d4e5e84a985b21ae2cb47d4f76b69359c2304cd80c166742",
-        "role": "user",
-        "poin": 5
-    },
-    "Inirafli": {
-        "password": "1091c5c9626ba7de7e455b0d668ba6bbf0f62674957ddad87e24626cca82b623",
-        "role": "user",
-        "poin": 0
-    },
-    "nabil": {
+    "raf": {
         "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
         "role": "user",
-        "poin": 0
+        "poin": 6
     },
-    "rafly": {
-        "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
-        "role": "user",
-        "poin": 40
+    "admin": {
+        "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+        "role": "admin",
+        "poin": 0
     }
 }
