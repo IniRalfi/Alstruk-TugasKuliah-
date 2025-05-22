@@ -22,10 +22,17 @@ def register():
     print('Error: Username telah terdaftar!')
     return None
   
+  secret_code = questionary.password(
+        "Masukkan kode admin (kosongkan untuk user biasa):",
+        default=""
+    ).ask()
+
+  role = "admin" if secret_code == "ADMIN" else "user"
+  
   hashed_password = hash_password(password)
   data_akun[username] = {
     "password" : hashed_password,
-    "role" : "user",
+    "role" : role,
     "poin" : 0
   }
 
@@ -50,6 +57,7 @@ def login():
   if hashed_input != data_akun[username]['password']:
     print('Error: Password salah!')
     return None
+      
   
   print(f'Login berhasil! Selamat datang {username}')
   return {

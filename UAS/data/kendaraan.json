@@ -1,1 +1,16 @@
-{}
+[
+    {
+        "username": "iniralfi",
+        "jenis": "Motor",
+        "plat": "KB 4907 XC",
+        "nama_kendaraan": "Honda Vario",
+        "didaftarkan_pada": "2025-05-21 19:31"
+    },
+    {
+        "username": "rafly",
+        "jenis": "Mobil",
+        "plat": "1756",
+        "nama_kendaraan": "supra",
+        "didaftarkan_pada": "2025-05-22 07:42"
+    }
+]

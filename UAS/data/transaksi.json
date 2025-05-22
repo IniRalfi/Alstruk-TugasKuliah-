@@ -1,1 +1,32 @@
-[]
+[
+    {
+        "id": "PTF-20250521-212903-QK2U",
+        "username": "iniralfi",
+        "tanggal": "2025-05-21 21:29",
+        "kendaraan": "KB 4907 XC",
+        "jenis_bbm": "premium",
+        "liter": "5",
+        "total": 50000.0,
+        "poin": 5
+    },
+    {
+        "id": "PTF-20250522-074254-6ID8",
+        "username": "rafly",
+        "tanggal": "2025-05-22 07:42",
+        "kendaraan": "1756",
+        "jenis_bbm": "premium",
+        "liter": "16",
+        "total": 160000.0,
+        "poin": 16
+    },
+    {
+        "id": "PTF-20250522-074309-V62X",
+        "username": "rafly",
+        "tanggal": "2025-05-22 07:43",
+        "kendaraan": "1756",
+        "jenis_bbm": "turbo",
+        "liter": "16",
+        "total": 240000.0,
+        "poin": 24
+    }
+]
