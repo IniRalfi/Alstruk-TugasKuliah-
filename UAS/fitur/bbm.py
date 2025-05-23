@@ -4,6 +4,8 @@ from datetime import datetime
 from utils.generate_id import generate_id
 from fitur.kendaraan import pilih_kendaraan
 from database.akun import load_akun, simpan_akun
+from database.antrian import tambah_antrian,load_antrian
+
 
 def transaksi_bbm(username) : 
   print("\n" + "="*30 + " ⛽ TRANSAKSI BBM " + "="*30)
@@ -44,8 +46,12 @@ def transaksi_bbm(username) :
       "jenis_bbm": jenis_bbm,
       "liter": jumlah,
       "total": total,
-      "poin": int(total / 10000)
+      "poin": int(total / 10000),
+      'status': 'MENUNGGU'
     }
+  
+  tambah_antrian(transaksi) 
+  print(f"⏳ Anda masuk antrian. No Antrian: {len(load_antrian())}")
 
   data = load_transaksi()
   data.append(transaksi)

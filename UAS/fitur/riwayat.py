@@ -1,42 +1,28 @@
 from datetime import datetime
 from tabulate import tabulate
+from utils.queue import Queue
 
-from database.transaksi import load_transaksi, simpan_transaksi
+from database.transaksi import load_transaksi
 
 def lihat_riwayat(username):
-    print("\n" + "="*40 + " 📜 RIWAYAT TRANSAKSI " + "="*40)
+    print("\n" + "="*30 + " 🕒 RIWAYAT TRANSAKSI " + "="*30)
+    
+    # 1. Muat data transaksi ke Queue
+    transaksi_queue = Queue()
+    for transaksi in load_transaksi():
+        if transaksi["username"] == username:
+            transaksi_queue.enqueue(transaksi)
 
-    all_transaksi = load_transaksi()
-
-    transaksi_user = [t for t in all_transaksi if t['username'] == username]
-
-    if not transaksi_user:
-        print('Anda belum memiliki riwayat transaksi')
+    if transaksi_queue.is_empty():
+        print("Belum ada transaksi.")
         return
     
-    transaksi_user.sort(key = lambda x : x['tanggal'], reverse=True)
-
-    data_tampilan = []
-    for idx, trans in enumerate (transaksi_user,1):
-        data_tampilan.append([
-            idx,
-            trans['tanggal'],
-            trans['kendaraan'],
-            trans['jenis_bbm'],
-            f'{trans['liter']} L',
-            f'Rp{trans['total']:,}'.replace(',', '.'),
-            f'{trans['poin']} Poin'
-        ])
-
-    headers = [
-        'No',
-        'Tanggal',
-        'Kendaraan',
-        'Jenis BBM',
-        'Jumlah',
-        'Total',
-        'Poin'
-    ]
-
-    print(tabulate(data_tampilan, headers=headers, tablefmt='grid'))
-    print(f'\nTotal transaksi : {len(transaksi_user)}')
+    print("\n5 Transaksi Terakhir:")
+    riwayat = transaksi_queue.get_all()[-5:]  # Ambil 5 terbaru
+    for idx, transaksi in enumerate(reversed(riwayat), 1):
+        print(
+            f"{idx}. {transaksi['tanggal']} | "
+            f"id transaksi {transaksi['id']}"
+            f"{transaksi['jenis_bbm']} {transaksi['liter']}L | "
+            f"Rp {transaksi['total']:,}"
+        )

@@ -19,15 +19,12 @@ def menu_user(username) :
 
     if choice == 'transaksi':
       transaksi_bbm(username)
-      pass
     elif choice == 'riwayat':
       lihat_riwayat(username)
-
     elif choice == 'kendaraan':
       kelola_kendaraan(username)
     elif choice == "poin":
       tampilkan_leaderboard(username)
-      pass
     elif choice == 'logout':
       print('Logout berhasil!')
       break
