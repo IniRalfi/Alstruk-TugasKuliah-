@@ -1,0 +1,3 @@
+[submodule "UAS"]
+	path = UAS
+	url = https://github.com/IniRalfi/Sistem-Pengelola-SPBU-Pertafli.git
